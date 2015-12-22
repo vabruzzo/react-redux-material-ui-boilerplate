@@ -1,0 +1,7 @@
+// counter
+export const INCREMENT_COUNTER = 'INCREMENT_COUNTER';
+export const DECREMENT_COUNTER = 'DECREMENT_COUNTER';
+
+// watson
+export const REQUEST_ANSWER = 'REQUEST_ANSWER';
+export const RECEIVE_ANSWER = 'RECEIVE_ANSWER';
