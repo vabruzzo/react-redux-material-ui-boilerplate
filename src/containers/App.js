@@ -5,7 +5,7 @@ import ThemeManager from 'material-ui/lib/styles/theme-manager';
 import LightRawTheme from 'material-ui/lib/styles/raw-themes/light-raw-theme';
 import ThemeDecorator from 'material-ui/lib/styles/theme-decorator';
 
-//@ThemeDecorator(ThemeManager.getMuiTheme(LightRawTheme))
+@ThemeDecorator(ThemeManager.getMuiTheme(LightRawTheme))
 class App extends Component {
   render() {
     const { content, dispatch, route } = this.props;

@@ -14,17 +14,9 @@ export default class Header extends Component {
 			<header>
         <AppBar
           title="React/Redux/Material UI"
-          iconElementLeft={
-            <IconMenu iconButtonElement={
-              <IconButton></IconButton>
-            }>
-              <MenuItem primaryText="Counter" />
-              <MenuItem primaryText="Help" />
-              <MenuItem primaryText="Sign out" />
-            </IconMenu>
-          }
+          showMenuIconButton={false}
           iconElementRight={
-            <NavTabs className="nav-bar" dispatch={dispatch} route={route} />
+            <NavTabs dispatch={dispatch} route={route} />
           }
         />
 			</header>

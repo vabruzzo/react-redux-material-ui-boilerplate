@@ -8,7 +8,8 @@ export default class NavTabs extends Component {
     const { dispatch, route } = this.props;
 
     return (
-			<Tabs value={route.path}
+			<Tabs className="nav-tabs"
+        value={route.path}
         onChange={function(value) {
           dispatch(pushPath(value));
         }}>
