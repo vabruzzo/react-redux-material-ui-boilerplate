@@ -1,7 +1,9 @@
 var path = require('path');
 var webpack = require('webpack');
 var HTMLWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var autoprefixer = require('autoprefixer');
+var precss = require('precss');
 
 module.exports = {
   devtool: 'cheap-module-source-map',
@@ -41,9 +43,12 @@ module.exports = {
         include: path.join(__dirname, 'src')
       },
       {
-        test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('!css!sass')
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract('!css!postcss')
       }
     ]
+  },
+  postcss: function () {
+    return [autoprefixer, precss];
   }
 };
