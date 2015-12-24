@@ -8,6 +8,8 @@ import { syncReduxAndRouter } from 'redux-simple-router';
 import getRoutes from './routes/index';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
+require('./styles/main.css');
+
 injectTapEventPlugin();
 
 const store = configureStore();
