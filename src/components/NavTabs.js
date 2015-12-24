@@ -5,13 +5,14 @@ import Tab from 'material-ui/lib/tabs/tab';
 
 export default class NavTabs extends Component {
   render() {
-    const { dispatch } = this.props;
+    const { dispatch, route } = this.props;
 
     return (
-			<Tabs onChange={function(value) {
+			<Tabs value={route.path}
+        onChange={function(value) {
           dispatch(pushPath(value));
         }}>
-        <Tab label="About" value="/about" />
+        <Tab label="About" value="/" />
         <Tab label="Counter" value="/counter" />
         <Tab label="Watson" value="/watson" />
 			</Tabs>

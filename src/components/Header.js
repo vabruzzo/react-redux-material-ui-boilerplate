@@ -5,11 +5,10 @@ import AppBar from 'material-ui/lib/app-bar';
 import IconMenu from 'material-ui/lib/menus/icon-menu';
 import IconButton from 'material-ui/lib/icon-button';
 import MenuItem from 'material-ui/lib/menus/menu-item';
-import { Link } from 'react-router';
 
 export default class Header extends Component {
   render() {
-    const { dispatch } = this.props;
+    const { dispatch, route } = this.props;
 
     return (
 			<header>
@@ -24,13 +23,10 @@ export default class Header extends Component {
               <MenuItem primaryText="Sign out" />
             </IconMenu>
           }
+          iconElementRight={
+            <NavTabs className="nav-bar" dispatch={dispatch} route={route} />
+          }
         />
-				<div className="title">
-					<IndexLink to="/"><h1>React/Redux/Material UI</h1></IndexLink>
-				</div>
-				<NavTabs className="nav-bar" dispatch={dispatch}/>
-				<div className="social">
-				</div>
 			</header>
     );
   }
