@@ -23,8 +23,13 @@ header {
 }
 .content {
   flex: 1;
-  margin: 0 auto;
+  margin: 60px auto;
   width: 60%;
+
+  .paper {
+    padding: 36px 60px 60px;
+    text-align: center;
+  }
 }
 footer {
   background-color: #212121;

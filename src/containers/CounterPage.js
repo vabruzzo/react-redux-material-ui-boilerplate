@@ -10,11 +10,11 @@ class Counter extends Component {
     const { increment, decrement, counter } = this.props
     return (
       <div>
-        <Paper zDepth="2">
+        <Paper className="paper" zDepth="2">
           <p>Clicked: {counter} times</p>
-          <RaisedButton label="increment" onClick={increment} />
-          {' '}
           <RaisedButton label="decrement" onClick={decrement} />
+          {' '}
+          <RaisedButton label="increment" onClick={increment} />
         </Paper>
       </div>
     )

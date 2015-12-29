@@ -8,11 +8,12 @@ export default class WatsonPage extends Component {
   render() {
     return (
       <div>
-        <Paper zDepth="2">
+        <Paper className="paper" zDepth="2">
           <p>Ask IBM's Watson a question.</p>
           <TextField
             hintText="question"
             floatingLabelText="ask watson:" />
+          {' '}
           <RaisedButton label="Ask!" />
           <div></div>
         </Paper>
