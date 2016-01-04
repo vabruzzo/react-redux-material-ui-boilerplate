@@ -12,7 +12,10 @@ body {
   width: 100%;
 }
 header {
-
+  
+ .nav-tabs {
+   border-spacing: 24px 0;
+ }
 }
 .content {
   flex: 1;
