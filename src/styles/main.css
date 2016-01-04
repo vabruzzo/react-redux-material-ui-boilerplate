@@ -13,13 +13,6 @@ body {
 }
 header {
 
-  .nav-tabs {
-    height: auto;
-
-    div {
-      height: 100%;
-    }
-  }
 }
 .content {
   flex: 1;

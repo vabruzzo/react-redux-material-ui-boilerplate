@@ -12,6 +12,12 @@ export default class NavTabs extends Component {
         value={route.path}
         onChange={function(value) {
           dispatch(pushPath(value));
+        }}
+        style={{
+          height:"100%"
+        }}
+        tabItemContainerStyle={{
+          height:"100%"
         }}>
         <Tab label="About" value="/" />
         <Tab label="Counter" value="/counter" />
