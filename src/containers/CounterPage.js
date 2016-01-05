@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as CounterActions from '../actions/counter'
@@ -6,19 +6,26 @@ import Paper from 'material-ui/lib/paper'
 import RaisedButton from 'material-ui/lib/raised-button'
 
 class Counter extends Component {
-  render() {
+  render () {
     const { increment, decrement, counter } = this.props
+
     return (
       <div>
-        <Paper className="paper" zDepth="2">
+        <Paper className='paper' zDepth='2'>
           <p>Clicked: {counter} times</p>
-          <RaisedButton label="decrement" onClick={decrement} />
+          <RaisedButton label='decrement' onClick={decrement} />
           {' '}
-          <RaisedButton label="increment" onClick={increment} />
+          <RaisedButton label='increment' onClick={increment} />
         </Paper>
       </div>
     )
   }
+}
+
+Counter.PropTypes = {
+  increment: PropTypes.func.isRequired,
+  decrement: PropTypes.func.isRequired,
+  counter: PropTypes.number.isRequired
 }
 
 function mapStateToProps (state) {
