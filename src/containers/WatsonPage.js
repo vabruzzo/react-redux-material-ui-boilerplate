@@ -2,20 +2,20 @@ import React, { Component } from 'react'
 import TextField from 'material-ui/lib/text-field'
 import Paper from 'material-ui/lib/paper'
 import RaisedButton from 'material-ui/lib/raised-button'
-import CircularProgress from 'material-ui/lib/circular-progress'
+// import CircularProgress from 'material-ui/lib/circular-progress'
 
 export default class WatsonPage extends Component {
-  render() {
+  render () {
     return (
       <div>
-        <Paper className="paper" zDepth="2">
-          <p>Ask IBM's Watson a question.</p>
+        <Paper className='paper' zDepth='2'>
+          <p>Ask Watson a question.</p>
           <TextField
-            hintText="question"
-            floatingLabelText="ask watson:"
+            hintText='question'
+            floatingLabelText='ask watson:'
           />
           {' '}
-          <RaisedButton label="Ask!" />
+          <RaisedButton label='Ask!' />
           <div></div>
         </Paper>
       </div>
