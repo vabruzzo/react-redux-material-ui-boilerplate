@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import * as CounterActions from '../actions/counter';
+import React, { Component } from 'react'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import * as CounterActions from '../actions/counter'
 import Paper from 'material-ui/lib/paper'
-import RaisedButton from 'material-ui/lib/raised-button';
+import RaisedButton from 'material-ui/lib/raised-button'
 
 class Counter extends Component {
   render() {
@@ -21,14 +21,14 @@ class Counter extends Component {
   }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps (state) {
   return {
     counter: state.counter
   }
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps (dispatch) {
   return bindActionCreators(CounterActions, dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Counter);
+export default connect(mapStateToProps, mapDispatchToProps)(Counter)

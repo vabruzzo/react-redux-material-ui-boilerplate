@@ -1,12 +1,12 @@
-import * as types from '../constants/ActionTypes';
+import * as types from '../constants/ActionTypes'
 
-export function increment() {
+export function increment () {
   return {
     type: types.INCREMENT_COUNTER
   }
 }
 
-export function decrement() {
+export function decrement () {
   return {
     type: types.DECREMENT_COUNTER
   }

@@ -41,9 +41,6 @@
     "babel-preset-react-hmre": "^1.0.0",
     "babel-preset-stage-0": "^6.3.13",
     "css-loader": "^0.23.0",
-    "eslint": "^1.10.3",
-    "eslint-plugin-babel": "^3.0.0",
-    "eslint-plugin-react": "^3.11.3",
     "express": "^4.13.3",
     "extract-text-webpack-plugin": "^0.9.1",
     "html-webpack-plugin": "^1.7.0",
@@ -66,5 +63,8 @@
     "redux": "^3.0.5",
     "redux-simple-router": "^1.0.1",
     "redux-thunk": "^1.0.2"
+  },
+  "standard": {
+    "parser": "babel-eslint"
   }
 }

@@ -1,7 +1,7 @@
-var path = require('path');
-var webpack = require('webpack');
-var autoprefixer = require('autoprefixer');
-var precss = require('precss');
+var path = require('path')
+var webpack = require('webpack')
+var autoprefixer = require('autoprefixer')
+var precss = require('precss')
 
 module.exports = {
   devtool: 'eval',
@@ -19,17 +19,19 @@ module.exports = {
     new webpack.NoErrorsPlugin()
   ],
   module: {
-    loaders: [{
-      test: /\.js$/,
-      loaders: ['babel'],
-      include: path.join(__dirname, 'src')
-    },
-		{
-			test: /\.css$/,
-			loaders: ['style', 'css', 'postcss']
-		}]
+    loaders: [
+      {
+        test: /\.js$/,
+        loaders: ['babel'],
+        include: path.join(__dirname, 'src')
+      },
+      {
+        test: /\.css$/,
+        loaders: ['style', 'css', 'postcss']
+      }
+    ]
   },
   postcss: function () {
-    return [autoprefixer, precss];
+    return [autoprefixer, precss]
   }
-};
+}

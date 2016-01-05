@@ -1,21 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import configureStore from './store/configureStore'
-import { Router, Route } from 'react-router';
-import createBrowserHistory from 'history/lib/createBrowserHistory';
-import { syncReduxAndRouter } from 'redux-simple-router';
-import getRoutes from './routes/index';
-import injectTapEventPlugin from 'react-tap-event-plugin';
+import { Router, Route } from 'react-router'
+import createBrowserHistory from 'history/lib/createBrowserHistory'
+import { syncReduxAndRouter } from 'redux-simple-router'
+import getRoutes from './routes/index'
+import injectTapEventPlugin from 'react-tap-event-plugin'
 
-require('./styles/main.css');
+require('./styles/main.css')
 
-injectTapEventPlugin();
+injectTapEventPlugin()
 
-const store = configureStore();
-const history = createBrowserHistory();
+const store = configureStore()
+const history = createBrowserHistory()
 
-syncReduxAndRouter(history, store);
+syncReduxAndRouter(history, store)
 
 ReactDOM.render(
   <Provider store={store}>
@@ -30,6 +30,4 @@ ReactDOM.render(
 console.log(store.getState())
 
 // Every time the state changes, log it
-let unsubscribe = store.subscribe(() =>
-  console.log(store.getState())
-)
+let unsubscribe = store.subscribe(() => console.log(store.getState()))
