@@ -29,7 +29,7 @@ module.exports = {
     new HTMLWebpackPlugin({
       hash: true,
       inject: 'body',
-      template: './index.prod.html',
+      template: './index.prod.html'
     }),
     new ExtractTextPlugin('./static/styles.css', {
       allChunks: true
