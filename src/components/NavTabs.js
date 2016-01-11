@@ -21,7 +21,7 @@ export default class NavTabs extends Component {
         }}>
         <Tab label='About' value='/' />
         <Tab label='Counter' value='/counter' />
-        <Tab label='Watson' value='/watson' />
+        <Tab label='Wolfram' value='/Wolfram' />
 			</Tabs>
     )
   }
