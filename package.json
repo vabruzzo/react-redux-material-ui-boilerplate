@@ -53,6 +53,7 @@
   },
   "dependencies": {
     "history": "^1.17.0",
+    "isomorphic-fetch": "^2.2.0",
     "material-ui": "^0.14.0-rc2",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
