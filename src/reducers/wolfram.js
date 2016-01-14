@@ -1,6 +1,6 @@
 import { REQUEST_ANSWER, RECEIVE_ANSWER } from '../constants/ActionTypes'
 
-function answer(state = {
+function answer (state = {
   isFetching: false,
   items: []
 }, action) {
@@ -12,14 +12,14 @@ function answer(state = {
     case RECEIVE_ANSWER:
       return Object.assign({}, state, {
         isFetching: false,
-        items: action.posts,
+        items: action.posts
       })
     default:
       return state
   }
 }
 
-function answerFromWolfram(state = {}, action) {
+function answerFromWolfram (state = {}, action) {
   switch (action.type) {
     case RECEIVE_ANSWER:
     case REQUEST_ANSWER:
