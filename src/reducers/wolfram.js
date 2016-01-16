@@ -1,8 +1,9 @@
 import { REQUEST_ANSWER, RECEIVE_ANSWER } from '../constants/ActionTypes'
 
-function answer (state = {
+export default function wolfram (state = {
   isFetching: false,
-  items: []
+  question: '',
+  answer: []
 }, action) {
   switch (action.type) {
     case REQUEST_ANSWER:
@@ -12,19 +13,7 @@ function answer (state = {
     case RECEIVE_ANSWER:
       return Object.assign({}, state, {
         isFetching: false,
-        items: action.posts
-      })
-    default:
-      return state
-  }
-}
-
-function answerFromWolfram (state = {}, action) {
-  switch (action.type) {
-    case RECEIVE_ANSWER:
-    case REQUEST_ANSWER:
-      return Object.assign({}, state, {
-        [action.reddit]: answer(state[action.reddit], action)
+        answer: action.answer
       })
     default:
       return state
