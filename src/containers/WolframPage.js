@@ -21,7 +21,9 @@ class WolframPage extends Component {
           />
           {' '}
           <RaisedButton label='Ask!' onClick={fetchAnswer} />
-          <CircularProgress />
+					{isFetching &&
+          	<CircularProgress />
+					}
           <div>{answer}</div>
         </Paper>
       </div>
