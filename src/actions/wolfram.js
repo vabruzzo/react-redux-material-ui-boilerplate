@@ -4,7 +4,7 @@ import fetch from 'isomorphic-fetch'
 function requestAnswer (question) {
   return {
     type: types.REQUEST_ANSWER,
-    question: question
+    question: question,
   }
 }
 
@@ -18,6 +18,7 @@ function receiveAnswer (json) {
 export function fetchAnswer (question) {
   return dispatch => {
     dispatch(requestAnswer(question))
+    console.log('sadas   ' + question);
     return fetch(`http://www.reddit.com/r/reactjs.json`)
       .then(response => {
         if (response.status >= 400) {

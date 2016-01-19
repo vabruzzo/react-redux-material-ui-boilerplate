@@ -9,7 +9,7 @@ import CircularProgress from 'material-ui/lib/circular-progress'
 
 class WolframPage extends Component {
   render () {
-    const { fetchAnswer, answer, isFetching } = this.props
+    const { fetchAnswer, question, answer, isFetching } = this.props
 
     return (
       <div>
@@ -20,11 +20,18 @@ class WolframPage extends Component {
             floatingLabelText='ask Wolfram:'
           />
           {' '}
-          <RaisedButton label='Ask!' onClick={fetchAnswer} />
-					{isFetching &&
+          <RaisedButton label='Ask!' onClick={function() { fetchAnswer('asdf') }}/>
+					{question != '' &&
+            <div>
+              Your question: {question}
+            </div>
+          }
+          {isFetching &&
           	<CircularProgress />
 					}
-          <div>{answer}</div>
+          <div>
+            {answer}
+          </div>
         </Paper>
       </div>
     )
@@ -37,6 +44,7 @@ WolframPage.PropTypes = {
 
 function mapStateToProps (state) {
   return {
+    question: state.wolfram.question,
     answer: state.wolfram.answer,
     isFetching: state.wolfram.isFetching
   }

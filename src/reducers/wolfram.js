@@ -3,12 +3,14 @@ import { REQUEST_ANSWER, RECEIVE_ANSWER } from '../constants/ActionTypes'
 export default function wolfram (state = {
   isFetching: false,
   question: '',
-  answer: []
+  answer: ''
 }, action) {
   switch (action.type) {
     case REQUEST_ANSWER:
       return Object.assign({}, state, {
-        isFetching: true
+        isFetching: true,
+        question: action.question,
+        answer: ''
       })
     case RECEIVE_ANSWER:
       return Object.assign({}, state, {
