@@ -12,7 +12,7 @@ export default class Header extends Component {
           title='React/Redux/Material UI'
           showMenuIconButton={false}
           iconElementRight={
-            <NavTabs dispatch={dispatch} route={route} />
+            <div><NavTabs dispatch={dispatch} route={route} /></div>
           }
         />
 			</header>

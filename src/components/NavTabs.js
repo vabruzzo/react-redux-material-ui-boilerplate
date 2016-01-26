@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import { pushPath } from 'redux-simple-router'
+import { routeActions } from 'react-router-redux'
 import Tabs from 'material-ui/lib/tabs/tabs'
 import Tab from 'material-ui/lib/tabs/tab'
 
@@ -9,15 +9,9 @@ export default class NavTabs extends Component {
 
     return (
       <Tabs className='nav-tabs'
-        value={route.path}
+        value={route.location.pathname}
         onChange={function (value) {
-          dispatch(pushPath(value))
-        }}
-        style={{
-          height: '100%'
-        }}
-        tabItemContainerStyle={{
-          height: '100%'
+          dispatch(routeActions.push(value))
         }}>
         <Tab label='About' value='/' />
         <Tab label='Counter' value='/counter' />

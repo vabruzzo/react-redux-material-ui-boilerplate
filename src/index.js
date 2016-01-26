@@ -1,25 +1,30 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
-import configureStore from './store/configureStore'
-import { Router } from 'react-router'
-import createBrowserHistory from 'history/lib/createBrowserHistory'
-import { syncReduxAndRouter } from 'redux-simple-router'
+import { Router, Route, browserHistory } from 'react-router'
+import { syncHistory } from 'react-router-redux'
 import getRoutes from './routes/index'
 import injectTapEventPlugin from 'react-tap-event-plugin'
+import thunk from 'redux-thunk'
+import reducers from './reducers'
 
 require('./styles/main.css')
 
 injectTapEventPlugin()
 
-const store = configureStore()
-const history = createBrowserHistory()
+// Sync dispatched route actions to the history
+const reduxRouterMiddleware = syncHistory(browserHistory)
+const createStoreWithMiddleware = applyMiddleware(
+  reduxRouterMiddleware,
+  thunk
+)(createStore)
 
-syncReduxAndRouter(history, store)
+const store = createStoreWithMiddleware(reducers)
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={history}>
+    <Router history={browserHistory}>
       {getRoutes()}
     </Router>
   </Provider>,
