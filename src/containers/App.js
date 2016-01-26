@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { Header, Footer } from '../components'
+import { Header, NavTabs, Footer } from '../components'
 import ThemeManager from 'material-ui/lib/styles/theme-manager'
 import LightRawTheme from 'material-ui/lib/styles/raw-themes/light-raw-theme'
 import ThemeDecorator from 'material-ui/lib/styles/theme-decorator'
@@ -12,7 +12,8 @@ class App extends Component {
 
     return (
       <div className='page'>
-        <Header dispatch={dispatch} route={route} />
+        <Header />
+        <NavTabs dispatch={dispatch} route={route} />
 				<div className='content'>
           {content}
 				</div>
