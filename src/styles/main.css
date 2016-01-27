@@ -11,12 +11,13 @@ body {
   height: 100vh;
   width: 100%;
 }
-header {
   
- .nav-tabs {
-   border-spacing: 0px 0;
- }
+.nav-tabs {
+  margin: 0 auto;
+   padding-top:24px;
+   width: 75%;
 }
+
 .content {
   flex: 1;
   margin: 60px auto;
