@@ -20,7 +20,13 @@ const createStoreWithMiddleware = applyMiddleware(
   thunk
 )(createStore)
 
-const store = createStoreWithMiddleware(reducers)
+const store = createStore(
+  reducers, 
+  applyMiddleware(
+    reduxRouterMiddleware,
+    thunk
+  )
+)
 
 ReactDOM.render(
   <Provider store={store}>
