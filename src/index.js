@@ -15,10 +15,6 @@ injectTapEventPlugin()
 
 // Sync dispatched route actions to the history
 const reduxRouterMiddleware = syncHistory(browserHistory)
-const createStoreWithMiddleware = applyMiddleware(
-  reduxRouterMiddleware,
-  thunk
-)(createStore)
 
 const store = createStore(
   reducers, 
